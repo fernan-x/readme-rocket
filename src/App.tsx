@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import TechnologyBadge from './components/ui/technology-badge';
+
 
 function App() {
   return (
@@ -7,6 +9,9 @@ function App() {
           Hello world!
       </h1>
       <Button>Click me</Button>
+      <TechnologyBadge name="next-js" />
+      <TechnologyBadge name="react-js" />
+      <TechnologyBadge name="tanstack-query" />
     </div>
   );
 }
