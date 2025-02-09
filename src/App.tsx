@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button';
-import TechnologyBadge from './components/ui/technology-badge';
+import TechnologyBadge from '@/components/common/technology-badge';
 
 
 function App() {
   return (
     <div className='bg-background h-screen flex flex-col p-8 gap-4'>
       <h1 className="text-3xl font-bold underline">
-          Hello world!
+          ReadMe Creator
       </h1>
       <Button>Click me</Button>
       <TechnologyBadge name="next-js" />
