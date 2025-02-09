@@ -1,21 +1,23 @@
 import { Button } from '@/components/ui/button';
 import TechnologyBadge from '@/components/common/technology-badge';
-import AppShell from './components/common/app-shell';
-import MarkdownEditor from './components/editor/markdown-editor';
+import AppShell from '@/components/common/app-shell';
+import Editor from '@/components/editor/editor';
+import { Rocket } from 'lucide-react';
 
 
 function App() {
     return (
         <AppShell>
             <AppShell.Header>
-                <h1 className="text-3xl font-bold underline">
-              ReadMe Creator
+                <h1 className="text-3xl font-bold flex flex-row items-center gap-2">
+                    <Rocket color='#7c3aed' />
+                    ReadMe Rocket
                 </h1>
             </AppShell.Header>
 
             <AppShell.Content>
                 <AppShell.Left>
-                    <MarkdownEditor />
+                    <Editor />
                 </AppShell.Left>
                 <AppShell.Right>
                     <Button>Click me</Button>
