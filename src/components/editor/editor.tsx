@@ -1,12 +1,18 @@
+import { ReadMe } from '@/hooks/useReadMe';
 import CollapsibleCard from './collapsible-card';
 import EditorProject from './editor-project';
+import React from 'react';
 
+type EditorProps = {
+    document: ReadMe;
+    setDocument: React.Dispatch<React.SetStateAction<ReadMe>>;
+};
 
-const Editor = () => {
+const Editor = ({document, setDocument}: EditorProps) => {
     return (
         <>
             <CollapsibleCard title='Project' defaultOpen>
-                <EditorProject />
+                <EditorProject document={document} setDocument={setDocument} />
             </CollapsibleCard>
             <CollapsibleCard title='About the project' />
             <CollapsibleCard title='Build with' />
