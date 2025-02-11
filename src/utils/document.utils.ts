@@ -1,4 +1,5 @@
 import { ReadMe } from '@/hooks/useReadMe';
+import previewImage from '@/assets/undraw_website.svg';
 
 // TODO: Linkedin url in contact section
 export const getBadgeSection = (githubPath: string) => {
@@ -30,7 +31,7 @@ export const getHeaderSection = (document: ReadMe) => {
 <br />
 <div align="center">
 <a href="${document.url}">
-<img src="/undraw_website.svg" alt="Logo" width="300">
+<img src="${previewImage}" alt="Logo" width="300">
 </a>
 
 <h3 align="center">${document.title}</h3>
