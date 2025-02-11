@@ -12,7 +12,7 @@ const ReadMeFactory = {
         return {
             title: '',
             description: '',
-            url: 'https://github.com/',
+            url: 'https://github.com/fernan-x/killian-coaching',
             technologies: [],
             ...data,
         };
