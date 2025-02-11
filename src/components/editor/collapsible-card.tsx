@@ -1,6 +1,5 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
@@ -20,11 +19,9 @@ const CollapsibleCard = ({ defaultOpen = false, title, children }: React.PropsWi
             >
                 <CardHeader>
                     <CollapsibleTrigger>
-                        <CardTitle className='flex flex-row items-center justify-between'>
+                        <CardTitle className='flex flex-row items-center justify-between text-xl'>
                             {title}
-                            <Button variant='ghost'>
-                                <ChevronDown className={`${isOpen ? 'rotate-180' : ''} transition-all transform`} />
-                            </Button>
+                            <ChevronDown className={`${isOpen ? 'rotate-180' : ''} transition-all transform`} />
                         </CardTitle>
                     </CollapsibleTrigger>
                 </CardHeader>

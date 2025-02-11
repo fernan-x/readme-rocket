@@ -1,11 +1,13 @@
-import { Button } from '@/components/ui/button';
-import TechnologyBadge from '@/components/common/technology-badge';
 import AppShell from '@/components/common/app-shell';
 import Editor from '@/components/editor/editor';
 import { Rocket } from 'lucide-react';
+import useReadMe from './hooks/useReadMe';
+import Preview from './components/editor/preview';
 
 
 function App() {
+    const { document, setDocument } = useReadMe();
+
     return (
         <AppShell>
             <AppShell.Header>
@@ -17,13 +19,13 @@ function App() {
 
             <AppShell.Content>
                 <AppShell.Left>
-                    <Editor />
+                    <Editor
+                        document={document}
+                        setDocument={setDocument}
+                    />
                 </AppShell.Left>
                 <AppShell.Right>
-                    <Button>Click me</Button>
-                    <TechnologyBadge name="next-js" />
-                    <TechnologyBadge name="react-js" />
-                    <TechnologyBadge name="tanstack-query" />
+                    <Preview document={document} />
                 </AppShell.Right>
             </AppShell.Content>
         </AppShell>

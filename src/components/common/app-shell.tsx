@@ -1,6 +1,6 @@
 const AppShellSide = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="flex flex-col gap-8 w-full">
+        <div className="flex flex-col gap-8 w-full overflow-y-auto">
             {children}
         </div>
     );
@@ -8,7 +8,7 @@ const AppShellSide = ({ children }: { children: React.ReactNode }) => {
 
 const AppShellContent = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="flex flex-row gap-8 w-full h-full overflow-y-auto">
+        <div className="flex flex-row gap-8 w-full h-full overflow-hidden">
             {children}
         </div>
     );
