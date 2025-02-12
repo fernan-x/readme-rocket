@@ -1,18 +1,12 @@
+import { ReadMe } from '@/types/readMe';
 import { useState } from 'react';
-
-export type ReadMe = {
-    title: string;
-    description: string;
-    url: string;
-    technologies: string[];
-};
 
 const ReadMeFactory = {
     create: (data?: Partial<ReadMe>): ReadMe => {
         return {
-            title: '',
-            description: '',
-            url: 'https://github.com/fernan-x/killian-coaching',
+            title: 'Example Project',
+            description: 'This is a blazing fast project which will help you to create a project with a beautiful UI and a lot of features.',
+            url: 'https://github.com/fernan-x/readme-rocket',
             technologies: [],
             ...data,
         };

@@ -1,4 +1,4 @@
-import { ReadMe } from '@/hooks/useReadMe';
+import { ReadMe } from '@/types/readMe';
 import previewImage from '@/assets/undraw_website.svg';
 
 // TODO: Linkedin url in contact section
