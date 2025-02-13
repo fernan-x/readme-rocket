@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ReadMe } from '@/types/readMe';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
-import { getBadgeSection, getHeaderSection } from '@/utils/readMe.utils';
+import { getBadgeSection, getContactSection, getHeaderSection } from '@/utils/readMe.utils';
 import { getGithubPath } from '@/utils/url.utils';
 
 
@@ -14,8 +15,9 @@ type PreviewProps = {
 const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 decoration-blue-500 hover:text-blue-700 hover:decoration-blue-700 transition-all';
 
 const Preview = ({document}: PreviewProps) => {
-    const badgeSection = getBadgeSection(getGithubPath(document.url));
+    const badgeSection = getBadgeSection(getGithubPath(document.url), document.contacts.linkedin);
     const headerSection = getHeaderSection(document);
+    const contactSection = getContactSection(document);
 
     return (
         <Markdown
@@ -38,21 +40,21 @@ const Preview = ({document}: PreviewProps) => {
                         {...props}
                     />;
                 },
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 h1: ({ node, ...props }) => {
                     return <h1 className="text-3xl font-bold mt-8" {...props} />;
                 },
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 h2: ({ node, ...props }) => {
-                    return <h2 className="text-2xl font-bold my-6" {...props} />;
+                    return <h2 className="text-2xl font-bold border-b mb-4 mt-6 pb-1" {...props} />;
                 },
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 h3: ({ node, ...props }) => {
-                    return <h3 className="text-xl font-bold my-4" {...props} />;
+                    return <h3 className="text-xl font-bold mb-4 mt-6" {...props} />;
+                },
+                p: ({ node, ...props }) => {
+                    return <p className="text-base mb-4" {...props} />;
                 },
             }}
         >
-            {`${badgeSection} ${headerSection}`}
+            {`${badgeSection} ${headerSection} ${contactSection}`}
         </Markdown>
     );
 };

@@ -1,15 +1,15 @@
 import { ReadMe } from '@/types/readMe';
 import previewImage from '@/assets/undraw_website.svg';
 
-// TODO: Linkedin url in contact section
-export const getBadgeSection = (githubPath: string) => {
+export const getBadgeSection = (githubPath: string, linkedin: string) => {
     return `
+<a id="readme-top"></a>
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Unlicense License][license-shield]][license-url]
-<!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 [contributors-shield]: https://img.shields.io/github/contributors/${githubPath}.svg?style=for-the-badge
 [contributors-url]: https://github.com/${githubPath}/graphs/contributors
@@ -22,7 +22,7 @@ export const getBadgeSection = (githubPath: string) => {
 [license-shield]: https://img.shields.io/github/license/${githubPath}.svg?style=for-the-badge
 [license-url]: https://github.com/${githubPath}/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/fabien-fernandes-alves/
+[linkedin-url]: ${linkedin}
     `;
 };
 
@@ -39,17 +39,30 @@ export const getHeaderSection = (document: ReadMe) => {
 <p align="center">
 ${document.description}
 <br />
-<a href="https://github.com/fernan-x/killian-coaching"><strong>Explore the docs »</strong></a>
+<br />
+<a href="${document.url}"><strong>Explore the docs »</strong></a>
 <br />
 <br />
 <a href="https://fernan-x.github.io/killian-coaching/">View Demo</a>
 &middot;
 <a href="https://www.fittruck-nantes.com/">Live Project</a>
 &middot;
-<a href="https://github.com/fernan-x/killian-coaching/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+<a href="${document.url}/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 &middot;
-<a href="https://github.com/fernan-x/killian-coaching/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+<a href="${document.url}/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
 </p>
 </div>
+    `;
+};
+
+export const getContactSection = (document: ReadMe) => {
+    return `
+## Contact
+
+${document.contacts.fullName} - [Linkedin](${document.contacts.linkedin}) - ${document.contacts.email}
+
+Project Link: [${document.url}](${document.url})
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
     `;
 };

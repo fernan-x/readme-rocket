@@ -1,4 +1,4 @@
-import { ReadMe } from '@/hooks/useReadMe';
+import { ReadMe } from '@/types/readMe';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
