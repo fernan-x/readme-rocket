@@ -24,7 +24,7 @@ function App() {
                         setDocument={setDocument}
                     />
                 </AppShell.Left>
-                <AppShell.Right>
+                <AppShell.Right noGap>
                     <Preview document={document} />
                 </AppShell.Right>
             </AppShell.Content>

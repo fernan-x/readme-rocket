@@ -1,6 +1,6 @@
-const AppShellSide = ({ children }: { children: React.ReactNode }) => {
+const AppShellSide = ({ children, noGap = false }: { children: React.ReactNode, noGap?: boolean }) => {
     return (
-        <div className="flex flex-col gap-8 w-full overflow-y-auto">
+        <div className={`flex flex-col ${noGap ? '' : 'gap-8 '}w-full overflow-y-auto`}>
             {children}
         </div>
     );
