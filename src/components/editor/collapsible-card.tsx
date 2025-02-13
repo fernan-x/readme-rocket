@@ -5,10 +5,11 @@ import { useState } from 'react';
 
 type CollapsibleCardProps = {
     defaultOpen?: boolean;
+    icon: React.ReactNode;
     title: string;
 };
 
-const CollapsibleCard = ({ defaultOpen = false, title, children }: React.PropsWithChildren<CollapsibleCardProps>) => {
+const CollapsibleCard = ({ defaultOpen = false, title, children, icon }: React.PropsWithChildren<CollapsibleCardProps>) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
     return (
@@ -20,7 +21,10 @@ const CollapsibleCard = ({ defaultOpen = false, title, children }: React.PropsWi
                 <CardHeader>
                     <CollapsibleTrigger>
                         <CardTitle className='flex flex-row items-center justify-between text-xl'>
-                            {title}
+                            <div className='flex flex-row items-center gap-2'>
+                                {icon}
+                                {title}
+                            </div>
                             <ChevronDown className={`${isOpen ? 'rotate-180' : ''} transition-all transform`} />
                         </CardTitle>
                     </CollapsibleTrigger>

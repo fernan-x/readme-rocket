@@ -12,7 +12,7 @@ function App() {
         <AppShell>
             <AppShell.Header>
                 <h1 className="text-3xl font-bold flex flex-row items-center gap-2">
-                    <Rocket color='#7c3aed' />
+                    <Rocket color='#7c3aed' size={36} />
                     ReadMe Rocket
                 </h1>
             </AppShell.Header>
