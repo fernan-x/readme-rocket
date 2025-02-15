@@ -8,6 +8,7 @@ const ReadMeFactory = {
             description: 'This is a blazing fast project which will help you to create a project with a beautiful UI and a lot of features.',
             url: 'https://github.com/fernan-x/readme-rocket',
             technologies: [],
+            about: '',
             contacts: {
                 fullName: 'Fabien Fernandes Alves',
                 email: 'fernandesalvesfabien@gmail.com',

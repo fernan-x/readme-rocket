@@ -17,7 +17,7 @@ const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 deco
 const Preview = ({document}: PreviewProps) => {
     const badgeSection = getBadgeSection(getGithubPath(document.url), document.contacts.linkedin);
     const headerSection = getHeaderSection(document);
-    const aboutProjectSection = getAboutProjectSection(document);
+    const aboutProjectSection = getAboutProjectSection();
     const contributingSection = getContributingSection(document);
     const contactSection = getContactSection(document);
 
@@ -54,12 +54,6 @@ const Preview = ({document}: PreviewProps) => {
                 p: ({ node, ...props }) => {
                     return <p className="text-base mb-4" {...props} />;
                 },
-                ol: ({ node, ...props }) => {
-                    return <ol className="list-decimal mb-4 pl-8" {...props} />;
-                },
-                ul: ({ node, ...props }) => {
-                    return <ul className='list-disc mb-4 pl-8' {...props} />;
-                }
             }}
         >
             {`${badgeSection} ${headerSection} ${aboutProjectSection} ${contributingSection} ${contactSection}`}
