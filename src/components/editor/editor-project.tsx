@@ -38,8 +38,8 @@ const EditorProject = ({document, setDocument}: EditorProjectProps) => {
                     type="text"
                     id="url"
                     placeholder="https://github.com/my-project"
-                    value={document?.url}
-                    onChange={(e) => setDocument({...document, url: e.target.value})}
+                    value={document?.githubUrl}
+                    onChange={(e) => setDocument({...document, githubUrl: e.target.value})}
                 />
             </div>
         </>
