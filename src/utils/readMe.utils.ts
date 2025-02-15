@@ -31,7 +31,7 @@ export const getHeaderSection = (document: ReadMe) => {
     return `
 <br />
 <div align="center">
-<a href="${document.url}">
+<a href="${document.githubUrl}">
 <img src="${previewImage}" alt="Logo" width="300">
 </a>
 
@@ -41,16 +41,16 @@ export const getHeaderSection = (document: ReadMe) => {
 ${document.description}
 <br />
 <br />
-<a href="${document.url}"><strong>Explore the docs »</strong></a>
+<a href="${document.githubUrl}"><strong>Explore the docs »</strong></a>
 <br />
 <br />
 <a href="https://fernan-x.github.io/killian-coaching/">View Demo</a>
 &middot;
 <a href="https://www.fittruck-nantes.com/">Live Project</a>
 &middot;
-<a href="${document.url}/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+<a href="${document.githubUrl}/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 &middot;
-<a href="${document.url}/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+<a href="${document.githubUrl}/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
 </p>
 </div>
     `;
@@ -62,7 +62,7 @@ export const getContactSection = (document: ReadMe) => {
 
 ${document.contacts.fullName} - [Linkedin](${document.contacts.linkedin}) - ${document.contacts.email}
 
-Project Link: [${document.url}](${document.url})
+Project Link: [${document.githubUrl}](${document.githubUrl})
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
     `;
@@ -85,10 +85,30 @@ Don't forget to give the project a star! Thanks again!
 
 ### Top contributors:
 
-<a href="${document.url}/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=${getGithubPath(document.url)}" alt="contrib.rocks image" />
+<a href="${document.githubUrl}/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=${getGithubPath(document.githubUrl)}" alt="contrib.rocks image" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+    `;
+};
+
+export const getAboutProjectSection = (document: ReadMe) => {
+    return `
+## About The Project
+
+[![${document.title} Screenshot](${document.projectScreenshot})](https://www.fittruck-nantes.com/)
+
+${document.about}
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
     `;
 };

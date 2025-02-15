@@ -3,7 +3,8 @@ import CollapsibleCard from './collapsible-card';
 import EditorProject from './editor-project';
 import React from 'react';
 import EditorContact from './editor-contact';
-import { FolderOpenDot, Mail } from 'lucide-react';
+import { Book, FolderOpenDot, Mail } from 'lucide-react';
+import EditorAboutProject from './editor-about-project';
 
 type EditorProps = {
     document: ReadMe;
@@ -15,13 +16,18 @@ const Editor = ({document, setDocument}: EditorProps) => {
         <>
             <CollapsibleCard
                 title='Project'
-                icon={<FolderOpenDot color='#7c3aed' />}
+                icon={<Book color='#7c3aed' />}
                 defaultOpen
             >
                 <EditorProject document={document} setDocument={setDocument} />
             </CollapsibleCard>
-            {/* <CollapsibleCard title='About the project' />
-            <CollapsibleCard title='Build with' />
+            <CollapsibleCard
+                title='About the project'
+                icon={<FolderOpenDot color='#7c3aed' />}
+            >
+                <EditorAboutProject document={document} setDocument={setDocument} />
+            </CollapsibleCard>
+            {/* <CollapsibleCard title='Build with' />
             <CollapsibleCard title='Getting started' />
             <CollapsibleCard title='Contributing' /> */}
             <CollapsibleCard

@@ -4,7 +4,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
-import { getBadgeSection, getContactSection, getContributingSection, getHeaderSection } from '@/utils/readMe.utils';
+import { getAboutProjectSection, getBadgeSection, getContactSection, getContributingSection, getHeaderSection } from '@/utils/readMe.utils';
 import { getGithubPath } from '@/utils/url.utils';
 
 
@@ -15,8 +15,9 @@ type PreviewProps = {
 const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 decoration-blue-500 hover:text-blue-700 hover:decoration-blue-700 transition-all';
 
 const Preview = ({document}: PreviewProps) => {
-    const badgeSection = getBadgeSection(getGithubPath(document.url), document.contacts.linkedin);
+    const badgeSection = getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin);
     const headerSection = getHeaderSection(document);
+    const aboutProjectSection = getAboutProjectSection(document);
     const contributingSection = getContributingSection(document);
     const contactSection = getContactSection(document);
 
@@ -53,12 +54,9 @@ const Preview = ({document}: PreviewProps) => {
                 p: ({ node, ...props }) => {
                     return <p className="text-base mb-4" {...props} />;
                 },
-                ol: ({ node, ...props }) => {
-                    return <ol className="list-decimal mb-4 pl-8" {...props} />;
-                },
             }}
         >
-            {`${badgeSection} ${headerSection} ${contributingSection} ${contactSection}`}
+            {`${badgeSection} ${headerSection} ${aboutProjectSection} ${contributingSection} ${contactSection}`}
         </Markdown>
     );
 };

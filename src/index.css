@@ -67,3 +67,36 @@
     @apply bg-background text-foreground;
   }
 }
+
+h1 {
+  @apply text-3xl font-bold mt-8;
+}
+
+h2 {
+  @apply text-2xl font-bold border-b mb-4 mt-6 pb-1;
+}
+
+ul {
+  @apply list-disc mb-4 pl-8;
+}
+
+ol {
+  @apply list-decimal mb-4 pl-8;
+}
+
+/* wysiwyg-editor */
+.rsw-editor {
+  @apply w-full rounded-md border border-input bg-transparent text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm !important;
+}
+
+.rsw-toolbar {
+  @apply bg-transparent border-input text-foreground !important;
+}
+
+.rsw-btn, .rsw-dd {
+  @apply bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground !important;
+}
+
+.rsw-separator, .rsw-ce {
+  @apply border-input focus:outline-primary !important;
+}
