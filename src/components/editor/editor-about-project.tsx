@@ -2,6 +2,7 @@ import { ReadMe } from '@/types/readMe';
 import sanitize from 'sanitize-html';
 import { Label } from '@radix-ui/react-label';
 import WysiwygEditor from '../common/wysiwyg-editor';
+import { Input } from '../ui/input';
 
 type EditorAboutProjectProps = {
     document: ReadMe;
@@ -10,14 +11,25 @@ type EditorAboutProjectProps = {
 
 const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) => {
     return (
-        <div className="grid w-full gap-2">
-            <Label htmlFor="about">Description</Label>
-            <WysiwygEditor
-                id="about"
-                value={document.about}
-                onChange={(e) => setDocument({...document, about: sanitize(e.target.value)})}
-            />
-        </div>
+        <>
+            <div className="grid w-full max-w-sm items-center gap-2">
+                <Label htmlFor="screenshot">Screenshot</Label>
+                <Input
+                    id="screenshot"
+                    placeholder=""
+                    value={document.projectScreenshot}
+                    onChange={(e) => setDocument({...document, projectScreenshot: e.target.value})}
+                />
+            </div>
+            <div className="grid w-full gap-2">
+                <Label htmlFor="about">About</Label>
+                <WysiwygEditor
+                    id="about"
+                    value={document.about}
+                    onChange={(e) => setDocument({...document, about: sanitize(e.target.value)})}
+                />
+            </div>
+        </>
     );
 };
 

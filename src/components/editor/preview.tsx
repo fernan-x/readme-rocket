@@ -15,9 +15,9 @@ type PreviewProps = {
 const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 decoration-blue-500 hover:text-blue-700 hover:decoration-blue-700 transition-all';
 
 const Preview = ({document}: PreviewProps) => {
-    const badgeSection = getBadgeSection(getGithubPath(document.url), document.contacts.linkedin);
+    const badgeSection = getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin);
     const headerSection = getHeaderSection(document);
-    const aboutProjectSection = getAboutProjectSection();
+    const aboutProjectSection = getAboutProjectSection(document);
     const contributingSection = getContributingSection(document);
     const contactSection = getContactSection(document);
 
