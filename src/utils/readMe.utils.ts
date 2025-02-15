@@ -92,3 +92,33 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
     `;
 };
+
+export const getAboutProjectSection = () => {
+    return `
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://www.fittruck-nantes.com/)
+
+Killian Coaching was born out of a desire to help my coach enhance their online presence and grow their coaching business. The original website lacked modern design elements and effective SEO strategies, limiting its ability to attract and engage potential clients. This project aims to solve those issues by delivering:
+
+* **Improved User Experience**: A clean, intuitive, and responsive design that makes it easy for visitors to learn about coaching services and get in touch.
+* **Enhanced SEO Performance**: Optimized content structure, metadata, and loading speed to improve search engine rankings and increase organic traffic.
+* **Content Management Flexibility**: A scalable and maintainable architecture to support content updates and future growth.
+
+This project is a collaboration fueled by a passion for web development and a belief in the transformative power of great coaching. By bridging technical know-how with the coach's expertise, Killian Coaching provides a strong digital foundation to support business growth and client engagement.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+    `;
+};

@@ -4,7 +4,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
-import { getBadgeSection, getContactSection, getContributingSection, getHeaderSection } from '@/utils/readMe.utils';
+import { getAboutProjectSection, getBadgeSection, getContactSection, getContributingSection, getHeaderSection } from '@/utils/readMe.utils';
 import { getGithubPath } from '@/utils/url.utils';
 
 
@@ -17,6 +17,7 @@ const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 deco
 const Preview = ({document}: PreviewProps) => {
     const badgeSection = getBadgeSection(getGithubPath(document.url), document.contacts.linkedin);
     const headerSection = getHeaderSection(document);
+    const aboutProjectSection = getAboutProjectSection(document);
     const contributingSection = getContributingSection(document);
     const contactSection = getContactSection(document);
 
@@ -56,9 +57,12 @@ const Preview = ({document}: PreviewProps) => {
                 ol: ({ node, ...props }) => {
                     return <ol className="list-decimal mb-4 pl-8" {...props} />;
                 },
+                ul: ({ node, ...props }) => {
+                    return <ul className='list-disc mb-4 pl-8' {...props} />;
+                }
             }}
         >
-            {`${badgeSection} ${headerSection} ${contributingSection} ${contactSection}`}
+            {`${badgeSection} ${headerSection} ${aboutProjectSection} ${contributingSection} ${contactSection}`}
         </Markdown>
     );
 };
