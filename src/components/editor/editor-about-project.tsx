@@ -12,6 +12,11 @@ type EditorAboutProjectProps = {
 const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) => {
     return (
         <>
+            <WysiwygEditor
+                id="about"
+                value={document.about}
+                onChange={(e) => setDocument({...document, about: sanitize(e.target.value)})}
+            />
             <div className="grid w-full max-w-sm items-center gap-2">
                 <Label htmlFor="screenshot">Screenshot</Label>
                 <Input
@@ -19,14 +24,6 @@ const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) 
                     placeholder=""
                     value={document.projectScreenshot}
                     onChange={(e) => setDocument({...document, projectScreenshot: e.target.value})}
-                />
-            </div>
-            <div className="grid w-full gap-2">
-                <Label htmlFor="about">About</Label>
-                <WysiwygEditor
-                    id="about"
-                    value={document.about}
-                    onChange={(e) => setDocument({...document, about: sanitize(e.target.value)})}
                 />
             </div>
         </>
