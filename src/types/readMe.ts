@@ -1,10 +1,12 @@
+import { TechnologyName } from '@/lib/technologies';
+
 export type ReadMe = {
     title: string;
     description: string;
     githubUrl: string;
     about: string;
     projectScreenshot: string;
-    technologies: string[];
+    technologies: TechnologyName[];
     contributing: string;
     contacts: {
         fullName: string;
@@ -20,7 +22,7 @@ export const ReadMeFactory = {
             description: 'This is a blazing fast project which will help you to create a project with a beautiful UI and a lot of features.',
             githubUrl: 'https://github.com/fernan-x/readme-rocket',
             projectScreenshot: 'https://picsum.photos/1280/500',
-            technologies: [],
+            technologies: ['react-js', 'next-js', 'tanstack-query'],
             about: '',
             contributing: `
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.

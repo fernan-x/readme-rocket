@@ -1,6 +1,7 @@
 import { ReadMe } from '@/types/readMe';
 import previewImage from '@/assets/undraw_website.svg';
 import { getGithubPath } from './url.utils';
+import { generateBadgeUrl, getTechnology, isTechnologyName } from '@/lib/technologies';
 
 export const getBadgeSection = (githubPath: string, linkedin: string) => {
     return `
@@ -85,6 +86,10 @@ ${document.contributing}
 };
 
 export const getAboutProjectSection = (document: ReadMe) => {
+    const technologies = document.technologies
+        .map((technology) => isTechnologyName(technology) ? getTechnology(technology) : null)
+        .filter(t => t !== null);
+
     return `
 ## About The Project
 
@@ -96,8 +101,7 @@ ${document.about}
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
+${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeUrl(technology.name)})](${technology.url})`).join('\n')}
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
