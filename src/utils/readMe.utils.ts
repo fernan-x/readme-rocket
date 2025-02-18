@@ -45,9 +45,7 @@ ${document.description}
 <a href="${document.githubUrl}"><strong>Explore the docs »</strong></a>
 <br />
 <br />
-<a href="https://fernan-x.github.io/killian-coaching/">View Demo</a>
-&middot;
-<a href="https://www.fittruck-nantes.com/">Live Project</a>
+<a href="${document.demoUrl}">View Demo</a>
 &middot;
 <a href="${document.githubUrl}/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 &middot;

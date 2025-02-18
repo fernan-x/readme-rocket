@@ -48,7 +48,7 @@ const EditorProject = ({document, setDocument}: EditorProjectProps) => {
                 <Input
                     type="text"
                     id="demo-url"
-                    placeholder=""
+                    placeholder="https://example.com"
                     value={document?.demoUrl}
                     onChange={(e) => setDocument({...document, demoUrl: e.target.value})}
                 />
