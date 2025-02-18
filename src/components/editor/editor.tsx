@@ -3,7 +3,7 @@ import CollapsibleCard from './collapsible-card';
 import EditorProject from './editor-project';
 import React from 'react';
 import EditorContact from './editor-contact';
-import { Book, Code, FolderOpenDot, Mail } from 'lucide-react';
+import { Cog, FolderOpenDot, Mail, Users } from 'lucide-react';
 import EditorAboutProject from './editor-about-project';
 import EditorAboutContributing from './editor-contributing';
 
@@ -16,15 +16,16 @@ const Editor = ({document, setDocument}: EditorProps) => {
     return (
         <>
             <CollapsibleCard
-                title='Project'
-                icon={<Book color='#7c3aed' />}
+                title='General'
+                icon={<Cog color='#7c3aed' />}
                 defaultOpen
             >
                 <EditorProject document={document} setDocument={setDocument} />
             </CollapsibleCard>
             <CollapsibleCard
-                title='About the project'
+                title='About'
                 icon={<FolderOpenDot color='#7c3aed' />}
+                defaultOpen
             >
                 <EditorAboutProject document={document} setDocument={setDocument} />
             </CollapsibleCard>
@@ -32,13 +33,15 @@ const Editor = ({document, setDocument}: EditorProps) => {
             <CollapsibleCard title='Getting started' /> */}
             <CollapsibleCard
                 title='Contributing'
-                icon={<Code color='#7c3aed' />}
+                icon={<Users color='#7c3aed' />}
+                defaultOpen
             >
                 <EditorAboutContributing document={document} setDocument={setDocument} />
             </CollapsibleCard>
             <CollapsibleCard
                 title='Contact'
                 icon={<Mail color='#7c3aed' />}
+                defaultOpen
             >
                 <EditorContact document={document} setDocument={setDocument} />
             </CollapsibleCard>

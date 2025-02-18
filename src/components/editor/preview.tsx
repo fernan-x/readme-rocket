@@ -54,6 +54,9 @@ const Preview = ({document}: PreviewProps) => {
                 p: ({ node, ...props }) => {
                     return <p className="text-base mb-4" {...props} />;
                 },
+                li: ({ node, ...props }) => {
+                    return <li className="mt-1" {...props} />;
+                },
             }}
         >
             {`${badgeSection} ${headerSection} ${aboutProjectSection} ${contributingSection} ${contactSection}`}

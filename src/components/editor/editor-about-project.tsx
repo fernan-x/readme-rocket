@@ -3,6 +3,8 @@ import sanitize from 'sanitize-html';
 import { Label } from '@radix-ui/react-label';
 import WysiwygEditor from '../common/wysiwyg-editor';
 import { Input } from '../ui/input';
+import { MultiSelect } from '../ui/multi-select';
+import { TECHNOLOGIES, TechnologyName } from '@/lib/technologies';
 
 type EditorAboutProjectProps = {
     document: ReadMe;
@@ -10,6 +12,11 @@ type EditorAboutProjectProps = {
 };
 
 const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) => {
+    const technologiesList = TECHNOLOGIES.map(t => ({
+        value: t.name,
+        label: t.badgeName,
+    }));
+
     return (
         <>
             <WysiwygEditor
@@ -24,6 +31,17 @@ const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) 
                     placeholder=""
                     value={document.projectScreenshot}
                     onChange={(e) => setDocument({...document, projectScreenshot: e.target.value})}
+                />
+            </div>
+            <div className="grid w-full items-center gap-2">
+                <Label htmlFor="built-with">Built with</Label>
+                <MultiSelect
+                    modalPopover
+                    options={technologiesList}
+                    onValueChange={(value) => setDocument({...document, technologies: value as TechnologyName[]})}
+                    defaultValue={document.technologies}
+                    placeholder="Select frameworks"
+                    variant="inverted"
                 />
             </div>
         </>
