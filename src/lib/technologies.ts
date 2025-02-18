@@ -16,7 +16,7 @@ const TechnologyFactory = {
     },
 };
 
-const TECHNOLOGIES = [
+export const TECHNOLOGIES = Object.freeze([
     TechnologyFactory.create({
         name: 'next-js',
         url: 'https://nextjs.org/',
@@ -38,7 +38,7 @@ const TECHNOLOGIES = [
         logoName: 'reactquery',
         logoColor: 'FF4154',
     }),
-];
+].sort((a, b) => a.name.localeCompare(b.name)));
 
 export type TechnologyName = typeof TECHNOLOGIES[number]['name'];
 
