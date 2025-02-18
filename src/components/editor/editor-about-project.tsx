@@ -33,7 +33,7 @@ const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) 
                     onChange={(e) => setDocument({...document, projectScreenshot: e.target.value})}
                 />
             </div>
-            <div className="grid w-full max-w-sm items-center gap-2">
+            <div className="grid w-full items-center gap-2">
                 <Label htmlFor="built-with">Built with</Label>
                 <MultiSelect
                     modalPopover

@@ -33,13 +33,24 @@ const EditorProject = ({document, setDocument}: EditorProjectProps) => {
             </div>
 
             <div className="grid w-full max-w-sm items-center gap-2">
-                <Label htmlFor="url">Github URL</Label>
+                <Label htmlFor="github-url">Github URL</Label>
                 <Input
                     type="text"
-                    id="url"
+                    id="github-url"
                     placeholder="https://github.com/my-project"
                     value={document?.githubUrl}
                     onChange={(e) => setDocument({...document, githubUrl: e.target.value})}
+                />
+            </div>
+
+            <div className="grid w-full max-w-sm items-center gap-2">
+                <Label htmlFor="demo-url">Demo URL</Label>
+                <Input
+                    type="text"
+                    id="demo-url"
+                    placeholder=""
+                    value={document?.demoUrl}
+                    onChange={(e) => setDocument({...document, demoUrl: e.target.value})}
                 />
             </div>
         </>

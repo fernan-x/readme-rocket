@@ -3,6 +3,7 @@ import { TechnologyName } from '@/lib/technologies';
 export type ReadMe = {
     title: string;
     description: string;
+    demoUrl: string;
     githubUrl: string;
     about: string;
     projectScreenshot: string;
@@ -21,6 +22,7 @@ export const ReadMeFactory = {
             title: 'Example Project',
             description: 'This is a blazing fast project which will help you to create a project with a beautiful UI and a lot of features.',
             githubUrl: 'https://github.com/fernan-x/readme-rocket',
+            demoUrl: 'https://example.com',
             projectScreenshot: 'https://picsum.photos/1280/500',
             technologies: ['react-js', 'next-js', 'tanstack-query'],
             about: '',
