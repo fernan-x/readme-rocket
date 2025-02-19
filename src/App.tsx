@@ -14,9 +14,9 @@ function App() {
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <AppShell>
                 <AppShell.Header>
-                    <h1 className="text-3xl font-bold flex flex-row items-center gap-2 flex-1">
+                    <h1 className="text-3xl font-bold flex flex-row items-center gap-2 flex-1 m-0">
                         <Rocket color='#7c3aed' size={36} />
-                    ReadMe Rocket
+                        ReadMe Rocket
                     </h1>
                     <ThemeToggle />
                 </AppShell.Header>

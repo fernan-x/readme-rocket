@@ -68,6 +68,8 @@ interface MultiSelectProps
     value: string;
     /** Optional icon component to display alongside the option. */
     icon?: React.ComponentType<{ className?: string }>;
+    /** Optional image component to display alongside the option. */
+    iconImg?: React.ReactNode;
   }[];
 
   /**
@@ -222,6 +224,7 @@ export const MultiSelect = React.forwardRef<
                                                 {IconComponent && (
                                                     <IconComponent className="h-4 w-4 mr-2" />
                                                 )}
+                                                {option?.iconImg && (option.iconImg)}
                                                 {option?.label}
                                                 <XCircle
                                                     className="ml-2 h-4 w-4 cursor-pointer"
