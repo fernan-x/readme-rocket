@@ -15,6 +15,7 @@ const EditorAboutProject = ({ document, setDocument }: EditorAboutProjectProps) 
     const technologiesList = TECHNOLOGIES.map(t => ({
         value: t.name,
         label: t.badgeName,
+        iconImg: <img src={`https://simpleicons.org/icons/${t.logoName}.svg`} alt={t.badgeName} className='h-4 w-4 mr-2 fill-white' />,
     }));
 
     return (
