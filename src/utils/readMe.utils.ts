@@ -91,7 +91,7 @@ export const getAboutProjectSection = (document: ReadMe) => {
     return `
 ## About The Project
 
-[![${document.title} Screenshot](${document.projectScreenshot})](https://www.fittruck-nantes.com/)
+[![${document.title} Screenshot](${document.projectScreenshot})](${document.demoUrl})
 
 ${document.about}
 
@@ -109,13 +109,9 @@ ${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeU
 export const generateDocument = (document: ReadMe) => {
     return `
 ${getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin)}
-
 ${getHeaderSection(document)}
-
 ${getAboutProjectSection(document)}
-
 ${getContributingSection(document)}
-
 ${getContactSection(document)}
     `;
 };

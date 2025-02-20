@@ -4,8 +4,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
-import { getAboutProjectSection, getBadgeSection, getContactSection, getContributingSection, getHeaderSection } from '@/utils/readMe.utils';
-import { getGithubPath } from '@/utils/url.utils';
+import { generateDocument } from '@/utils/readMe.utils';
 
 
 type PreviewProps = {
@@ -15,11 +14,7 @@ type PreviewProps = {
 const AClassName = 'inline-block w-fit underline text-blue-500 decoration-2 decoration-blue-500 hover:text-blue-700 hover:decoration-blue-700 transition-all';
 
 const Preview = ({document}: PreviewProps) => {
-    const badgeSection = getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin);
-    const headerSection = getHeaderSection(document);
-    const aboutProjectSection = getAboutProjectSection(document);
-    const contributingSection = getContributingSection(document);
-    const contactSection = getContactSection(document);
+    const documentContent = generateDocument(document);
 
     return (
         <Markdown
@@ -59,7 +54,7 @@ const Preview = ({document}: PreviewProps) => {
                 },
             }}
         >
-            {`${badgeSection} ${headerSection} ${aboutProjectSection} ${contributingSection} ${contactSection}`}
+            {documentContent}
         </Markdown>
     );
 };
