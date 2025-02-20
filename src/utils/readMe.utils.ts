@@ -105,3 +105,17 @@ ${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeU
 
     `;
 };
+
+export const generateDocument = (document: ReadMe) => {
+    return `
+${getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin)}
+
+${getHeaderSection(document)}
+
+${getAboutProjectSection(document)}
+
+${getContributingSection(document)}
+
+${getContactSection(document)}
+    `;
+};

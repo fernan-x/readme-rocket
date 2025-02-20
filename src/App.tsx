@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/contexts/theme-provider';
 import useReadMe from './hooks/useReadMe';
 import Preview from './components/editor/preview';
 import { ThemeToggle } from './components/common/theme-toggle';
+import CopyDocumentButton from './components/common/copy-document-button';
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
                         <Rocket color='#7c3aed' size={36} />
                         ReadMe Rocket
                     </h1>
-                    <ThemeToggle />
+                    <div className='flex gap-2'>
+                        <CopyDocumentButton document={document} />
+                        <ThemeToggle />
+                    </div>
                 </AppShell.Header>
 
                 <AppShell.Content>
