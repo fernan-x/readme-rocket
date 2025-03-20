@@ -1,13 +1,13 @@
-import { ReadMe, ReadMeFactory } from '@/types/readMe';
-import { useState } from 'react';
+import { ReadMe, ReadMeFactory } from "@/types/readMe";
+import { useState } from "react";
 
 const useReadMe = () => {
-    const [document, setDocument] = useState<ReadMe>(ReadMeFactory.create());
+  const [document, setDocument] = useState<ReadMe>(ReadMeFactory.create());
 
-    return {
-        document,
-        setDocument,
-    };
+  return {
+    document,
+    setDocument,
+  };
 };
 
 export default useReadMe;

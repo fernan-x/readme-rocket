@@ -1,10 +1,14 @@
-import { ReadMe } from '@/types/readMe';
-import previewImage from '@/assets/undraw_website.svg';
-import { getGithubPath } from './url.utils';
-import { generateBadgeUrl, getTechnology, isTechnologyName } from '@/lib/technologies';
+import { ReadMe } from "@/types/readMe";
+import previewImage from "@/assets/undraw_website.svg";
+import { getGithubPath } from "./url.utils";
+import {
+  generateBadgeUrl,
+  getTechnology,
+  isTechnologyName,
+} from "@/lib/technologies";
 
 export const getBadgeSection = (githubPath: string, linkedin: string) => {
-    return `
+  return `
 <a id="readme-top"></a>
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -29,7 +33,7 @@ export const getBadgeSection = (githubPath: string, linkedin: string) => {
 };
 
 export const getHeaderSection = (document: ReadMe) => {
-    return `
+  return `
 <br />
 <div align="center">
 <a href="${document.githubUrl}">
@@ -56,7 +60,7 @@ ${document.description}
 };
 
 export const getContactSection = (document: ReadMe) => {
-    return `
+  return `
 ## Contact
 
 ${document.contacts.fullName} - [Linkedin](${document.contacts.linkedin}) - ${document.contacts.email}
@@ -68,7 +72,7 @@ Project Link: [${document.githubUrl}](${document.githubUrl})
 };
 
 export const getContributingSection = (document: ReadMe) => {
-    return `
+  return `
 ## Contributing
 
 ${document.contributing}
@@ -84,11 +88,13 @@ ${document.contributing}
 };
 
 export const getAboutProjectSection = (document: ReadMe) => {
-    const technologies = document.technologies
-        .map((technology) => isTechnologyName(technology) ? getTechnology(technology) : null)
-        .filter(t => t !== null);
+  const technologies = document.technologies
+    .map((technology) =>
+      isTechnologyName(technology) ? getTechnology(technology) : null,
+    )
+    .filter((t) => t !== null);
 
-    return `
+  return `
 ## About The Project
 
 [![${document.title} Screenshot](${document.projectScreenshot})](${document.demoUrl})
@@ -99,7 +105,7 @@ ${document.about}
 
 ### Built With
 
-${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeUrl(technology.name)})](${technology.url})`).join('\n')}
+${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeUrl(technology.name)})](${technology.url})`).join("\n")}
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,7 +113,7 @@ ${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeU
 };
 
 export const generateDocument = (document: ReadMe) => {
-    return `
+  return `
 ${getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin)}
 ${getHeaderSection(document)}
 ${getAboutProjectSection(document)}
