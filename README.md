@@ -1,5 +1,3 @@
-
-
 <a id="readme-top"></a>
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -20,8 +18,6 @@
 [license-url]: https://github.com/fernan-x/readme-rocket/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/fabien-fernandes-alves/
-
-
 
 <br />
 <div align="center">
@@ -46,8 +42,6 @@ Quickly generate well-structured, visually appealing README files with ease. Per
 </p>
 </div>
 
-
-
 ## About The Project
 
 [![🚀 ReadME Rocket Screenshot](/public/og-image.png)](https://fernan-x.github.io/readme-rocket/)
@@ -64,17 +58,14 @@ Quickly generate well-structured, visually appealing README files with ease. Per
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
 ## Contributing
-
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.
 <br /><br />
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 <br /><br />
+
 <ol>
     <li>Fork the Project</li>
     <li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
@@ -83,7 +74,6 @@ Don't forget to give the project a star! Thanks again!
     <li>Open a Pull Request</li>
 </ol>
 
-
 ### Top contributors:
 
 <a href="https://github.com/fernan-x/readme-rocket/graphs/contributors">
@@ -91,8 +81,6 @@ Don't forget to give the project a star! Thanks again!
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## Contact
 
