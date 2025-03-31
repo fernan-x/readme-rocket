@@ -32,7 +32,7 @@ function App() {
           <AppShell.Right noGap className="hidden md:flex">
             <Preview document={document} />
           </AppShell.Right>
-          <ActionButton />
+          <ActionButton document={document} />
         </AppShell.Content>
       </AppShell>
     </ThemeProvider>
