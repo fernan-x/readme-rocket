@@ -4,7 +4,8 @@ import { Label } from "@radix-ui/react-label";
 import WysiwygEditor from "../common/wysiwyg-editor";
 import { Input } from "../ui/input";
 import { MultiSelect } from "../ui/multi-select";
-import { TECHNOLOGIES, TechnologyName } from "@/lib/technologies";
+import { TechnologyName } from "@/lib/technologies";
+import { TECHNOLOGIES } from "@/lib/technology-list";
 
 type EditorAboutProjectProps = {
   document: ReadMe;
@@ -60,7 +61,6 @@ const EditorAboutProject = ({
           }
           defaultValue={document.technologies}
           placeholder="Select frameworks"
-          variant="inverted"
         />
       </div>
     </>
