@@ -3,7 +3,7 @@ import { CheckIcon, ClipboardIcon } from "lucide-react";
 
 import { Button, ButtonProps } from "../ui/button";
 import { ReadMe } from "@/types/readMe";
-import { generateDocument } from "@/utils/readMe.utils";
+import { generateDocumentExport } from "@/utils/readMe.utils";
 import {
   Tooltip,
   TooltipContent,
@@ -25,7 +25,10 @@ const CopyDocumentButton = ({
   ...props
 }: CopyDocumentButtonProps) => {
   const [hasCopied, setHasCopied] = React.useState(false);
-  const value = React.useMemo(() => generateDocument(document), [document]);
+  const value = React.useMemo(
+    () => generateDocumentExport(document),
+    [document],
+  );
 
   React.useEffect(() => {
     setTimeout(() => {

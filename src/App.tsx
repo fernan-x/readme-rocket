@@ -26,7 +26,7 @@ function App() {
         </AppShell.Header>
 
         <AppShell.Content>
-          <AppShell.Left>
+          <AppShell.Left id="editor-content">
             <Editor document={document} setDocument={setDocument} />
           </AppShell.Left>
           <AppShell.Right noGap className="hidden md:flex">

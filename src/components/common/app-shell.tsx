@@ -1,20 +1,24 @@
 import { cn } from "@/lib/utils";
 
+type AppShellSideProps = React.HTMLAttributes<HTMLDivElement> & {
+  children: React.ReactNode;
+  noGap?: boolean;
+  className?: string;
+}
+
 const AppShellSide = ({
   children,
   noGap = false,
   className,
-}: {
-  children: React.ReactNode;
-  noGap?: boolean;
-  className?: string;
-}) => {
+  ...props
+}: AppShellSideProps) => {
   return (
     <div
       className={cn(
         `flex flex-col ${noGap ? "" : "gap-4 "}w-full overflow-y-auto`,
         className,
       )}
+      {...props}
     >
       {children}
     </div>
