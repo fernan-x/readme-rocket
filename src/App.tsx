@@ -6,6 +6,7 @@ import useReadMe from "./hooks/useReadMe";
 import Preview from "./components/editor/preview";
 import { ThemeToggle } from "./components/common/theme-toggle";
 import CopyDocumentButton from "./components/common/copy-document-button";
+import ActionButton from "./components/common/action-button";
 
 function App() {
   const { document, setDocument } = useReadMe();
@@ -25,12 +26,13 @@ function App() {
         </AppShell.Header>
 
         <AppShell.Content>
-          <AppShell.Left>
+          <AppShell.Left id="editor-content">
             <Editor document={document} setDocument={setDocument} />
           </AppShell.Left>
-          <AppShell.Right noGap>
+          <AppShell.Right noGap className="hidden md:flex">
             <Preview document={document} />
           </AppShell.Right>
+          <ActionButton />
         </AppShell.Content>
       </AppShell>
     </ThemeProvider>

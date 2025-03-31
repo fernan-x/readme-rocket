@@ -1,4 +1,6 @@
-type Technology<T extends string = string> = {
+import { TECHNOLOGIES } from "./technology-list";
+
+export type Technology<T extends string = string> = {
   name: T;
   url: string;
   logoName: string; // https://simpleicons.org/
@@ -7,40 +9,6 @@ type Technology<T extends string = string> = {
   badgeColor?: string;
   style?: string;
 };
-
-const TechnologyFactory = {
-  create<T extends string>(data: Technology<T>): Technology<T> {
-    return {
-      ...data,
-    };
-  },
-};
-
-export const TECHNOLOGIES = Object.freeze(
-  [
-    TechnologyFactory.create({
-      name: "next-js",
-      url: "https://nextjs.org/",
-      badgeName: "Next.js",
-      logoName: "nextdotjs",
-      logoColor: "white",
-    }),
-    TechnologyFactory.create({
-      name: "react-js",
-      url: "https://reactjs.org/",
-      badgeName: "React.js",
-      logoName: "react",
-      logoColor: "61DAFB",
-    }),
-    TechnologyFactory.create({
-      name: "tanstack-query",
-      url: "https://tanstack.com/query/latest",
-      badgeName: "Tanstack Query",
-      logoName: "reactquery",
-      logoColor: "FF4154",
-    }),
-  ].sort((a, b) => a.name.localeCompare(b.name)),
-);
 
 export type TechnologyName = (typeof TECHNOLOGIES)[number]["name"];
 

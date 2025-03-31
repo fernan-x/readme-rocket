@@ -1,13 +1,24 @@
+import { cn } from "@/lib/utils";
+
+type AppShellSideProps = React.HTMLAttributes<HTMLDivElement> & {
+  children: React.ReactNode;
+  noGap?: boolean;
+  className?: string;
+}
+
 const AppShellSide = ({
   children,
   noGap = false,
-}: {
-  children: React.ReactNode;
-  noGap?: boolean;
-}) => {
+  className,
+  ...props
+}: AppShellSideProps) => {
   return (
     <div
-      className={`flex flex-col ${noGap ? "" : "gap-4 "}w-full overflow-y-auto`}
+      className={cn(
+        `flex flex-col ${noGap ? "" : "gap-4 "}w-full overflow-y-auto`,
+        className,
+      )}
+      {...props}
     >
       {children}
     </div>
@@ -16,7 +27,7 @@ const AppShellSide = ({
 
 const AppShellContent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-row gap-8 w-full h-full overflow-hidden">
+    <div className="flex flex-row gap-8 w-full h-full overflow-hidden relative">
       {children}
     </div>
   );
@@ -28,7 +39,7 @@ const AppShellHeader = ({ children }: { children: React.ReactNode }) => {
 
 const AppShell = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-background h-screen flex flex-col p-8 gap-8">
+    <div className="bg-background h-screen flex flex-col p-4 md:p-8 gap-8">
       {children}
     </div>
   );

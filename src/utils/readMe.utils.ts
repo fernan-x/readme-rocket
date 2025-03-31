@@ -112,12 +112,30 @@ ${technologies.map((technology) => `[![${technology.badgeName}](${generateBadgeU
     `;
 };
 
-export const generateDocument = (document: ReadMe) => {
+export const generateDocumentForPreview = (document: ReadMe) => {
+  return `
+<div data-section-id="general">
+${getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin)}
+${getHeaderSection(document)}
+</div>
+<div data-section-id="about">
+${getAboutProjectSection(document)}
+</div>
+<div data-section-id="contributing">
+${getContributingSection(document)}
+</div>
+<div data-section-id="contact">
+${getContactSection(document)}
+</div>
+    `;
+};
+
+export const generateDocumentExport = (document: ReadMe) => {
   return `
 ${getBadgeSection(getGithubPath(document.githubUrl), document.contacts.linkedin)}
 ${getHeaderSection(document)}
 ${getAboutProjectSection(document)}
 ${getContributingSection(document)}
 ${getContactSection(document)}
-    `;
+`;
 };
